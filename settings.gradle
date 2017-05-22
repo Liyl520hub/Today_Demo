@@ -1,0 +1,3 @@
+include ':app', ':test_up', ':test_day_1', ':xxlist_view', ':sliding_menu_'
+project(':xxlist_view').projectDir = new File('XListView-master/app')
+project(':sliding_menu_').projectDir = new File('sliding_menu')

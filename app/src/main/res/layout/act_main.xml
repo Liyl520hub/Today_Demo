@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.zhori.today_headlines.view.activity.MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/fragment_ll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.17"
+        android:orientation="vertical">
+
+    </LinearLayout>
+
+
+    <RadioGroup
+        android:id="@+id/group_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/radio_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:drawableTop="@drawable/home_selector"
+            android:gravity="center"
+            android:text="首页"
+            android:textColor="@drawable/activityselector"
+            android:textSize="15sp"
+            />
+
+        <RadioButton
+            android:id="@+id/radio_video"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="false"
+            android:drawableTop="@drawable/video_selector"
+            android:gravity="center"
+
+            android:text="视频"
+            android:textColor="@drawable/activityselector"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio_we"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="false"
+            android:drawableTop="@drawable/three_selector"
+            android:gravity="center"
+
+            android:text="微头条"
+            android:textColor="@drawable/activityselector"
+            android:textSize="15sp" />
+
+        <RadioButton
+            android:id="@+id/radio_me"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="false"
+            android:drawableTop="@drawable/me_selector"
+            android:gravity="center"
+            android:text="我的"
+            android:textColor="@drawable/activityselector"
+            android:textSize="15sp" />
+
+    </RadioGroup>
+
+
+</LinearLayout>
