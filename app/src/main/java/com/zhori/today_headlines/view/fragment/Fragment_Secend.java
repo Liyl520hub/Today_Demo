@@ -11,7 +11,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.zhori.today_headlines.R;
+import com.zhori.today_headlines.enent.TestEnevt;
 
+import org.greenrobot.eventbus.EventBus;
 import org.xutils.x;
 
 import java.util.ArrayList;
@@ -44,16 +46,6 @@ public class Fragment_Secend extends Fragment {
         String video_ur="https://v.qq.com/x/page/g14142zyugf.html";
 
 
-//        Uri uri = Uri.parse("http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4");
-//        VideoView videoView = (VideoView)getView().findViewById(R.id.vp_f2);
-//
-//        videoView.setMediaController(new MediaController(getActivity()));
-//
-//        videoView.setVideoURI(uri);
-//        videoView.start();
-       // videoView.requestFocus();
-
-
         vp = (ViewPager) getView().findViewById(R.id.vp_f2);
 
 
@@ -67,6 +59,21 @@ public class Fragment_Secend extends Fragment {
         Myadapter myadapter = new Myadapter();
 
        vp.setAdapter(myadapter);
+
+
+
+        getView().findViewById(R.id.btn_f2).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                TestEnevt testEnevt = new TestEnevt();
+                testEnevt.setMessage("haha  我是2");
+                testEnevt.setIndex(555555);
+                EventBus.getDefault().post(testEnevt);
+
+            }
+        });
+
 
 
     }

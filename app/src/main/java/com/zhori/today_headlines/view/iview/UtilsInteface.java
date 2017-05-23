@@ -11,6 +11,6 @@ public interface UtilsInteface {
 
 
     <T>void CallBackBean(T clazz);
-
+    void CallBackJson(String json);
 
 }

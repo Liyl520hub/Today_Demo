@@ -36,6 +36,11 @@ public class Fragment_Model_Persenter extends BasePersenter<F1_Model_Interface> 
                 getImvpview().CallBackXlist((HomeBean_F1Content) clazz);
 
             }
+
+            @Override
+            public void CallBackJson(String json) {
+
+            }
         });
 
 
@@ -43,8 +48,16 @@ public class Fragment_Model_Persenter extends BasePersenter<F1_Model_Interface> 
 
     public void setImag(ImageView imag_, String imag_url) {
 
-        Utils.HttpImag(imag_, imag_url);
+     //   Utils.HttpImag(imag_, imag_url);
+
+        Utils.OkhttpImag(imag_,imag_url);
+
+
     }
+
+
+
+
 
 
 }

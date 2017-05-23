@@ -43,5 +43,7 @@ dependencies {
     compile files('libs/umeng_social_api.jar')
     compile files('libs/umeng_shareboard_widget.jar')
     compile project(':sliding_menu_')
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.squareup.okhttp3:okhttp:3.8.0'
 }
 

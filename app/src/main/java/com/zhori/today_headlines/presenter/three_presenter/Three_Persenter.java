@@ -29,6 +29,11 @@ public class Three_Persenter extends BasePersenter<F3_Inteface> {
                 getImvpview().CallBack((ThreeBean) clazz);
 
             }
+
+            @Override
+            public void CallBackJson(String json) {
+
+            }
         });
 
 

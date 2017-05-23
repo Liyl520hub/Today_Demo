@@ -1,5 +1,6 @@
 package com.zhori.today_headlines.presenter.home_presenter;
 
+import com.google.gson.Gson;
 import com.zhori.today_headlines.model.homeFragmentBean.HomeBean_F1;
 import com.zhori.today_headlines.model.utils.Utils;
 import com.zhori.today_headlines.presenter.BasePersenter;
@@ -43,10 +44,46 @@ public class Fragment_Home_Presenter extends BasePersenter<F1_Interface> {
 
 
             }
+
+            @Override
+            public void CallBackJson(String json) {
+
+            }
+
+
         });
 
 
     }
+
+
+
+
+    public void getTabList2() {
+
+
+
+        Utils.OkHttpget(tab_url, new UtilsInteface() {
+           @Override
+           public <T> void CallBackBean(T clazz) {
+
+
+           }
+
+            @Override
+            public void CallBackJson(String json) {
+
+                Gson gson = new Gson();
+                HomeBean_F1 homeBean_f1 = gson.fromJson(json, HomeBean_F1.class);
+                getImvpview().CallBackTabList(homeBean_f1);
+
+
+            }
+        });
+
+
+    }
+
 
 
 

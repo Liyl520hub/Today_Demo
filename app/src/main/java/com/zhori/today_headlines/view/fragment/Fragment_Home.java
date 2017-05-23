@@ -12,11 +12,16 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.zhori.today_headlines.R;
+import com.zhori.today_headlines.enent.TestEnevt;
 import com.zhori.today_headlines.model.homeFragmentBean.HomeBean_F1;
 import com.zhori.today_headlines.presenter.home_presenter.Fragment_Home_Presenter;
 import com.zhori.today_headlines.view.dadpter.ViewPageAdapter;
 import com.zhori.today_headlines.view.fragment.home_fragment.HomeFragment_model;
 import com.zhori.today_headlines.view.iview.F1_Interface;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 
@@ -55,6 +60,33 @@ public class Fragment_Home extends Fragment implements F1_Interface {
 
     }
 
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        EventBus.getDefault().register(this);
+
+    }
+
+    @Override//防止内存泄漏
+    public void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+
+    }
+
+
+    @Subscribe (threadMode = ThreadMode.MAIN)
+    public void getlyl(TestEnevt testEnevt){
+
+        String message = testEnevt.getMessage();
+        int index = testEnevt.getIndex();
+        Log.e( "getlyl: ",message +"==="+index);
+
+    }
+
+
+
 
     @Override
     public void onResume() {
@@ -75,7 +107,8 @@ public class Fragment_Home extends Fragment implements F1_Interface {
         //专属FragmentHome的数据Persenter类
         f1_home_presenter = new Fragment_Home_Presenter();
         f1_home_presenter.setImvpview(this);
-        f1_home_presenter.getTabList();
+       // f1_home_presenter.getTabList();
+        f1_home_presenter.getTabList2();
 
     }
 
