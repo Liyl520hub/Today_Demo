@@ -55,13 +55,17 @@ public class MainActivity extends BaseActivity implements Iview, View.OnClickLis
         SharedPreferences.Editor edit = day_night.edit();
         int position = day_night.getInt("position", 0);
 
+
        //数据回来默认展示第一个fragment
+
         FragmentManager sm = getSupportFragmentManager();
         FragmentTransaction ft = sm.beginTransaction();
         for (int i = 0; i < fragments.size(); i++) {
             ft.add(R.id.fragment_ll, fragments.get(i));
         }
         ft.commit();
+
+
 
         changeFragment(fragments.get(position));
 
@@ -159,6 +163,7 @@ public class MainActivity extends BaseActivity implements Iview, View.OnClickLis
             break;
 
         }
+
         changeFragment(fragments.get(index));
 
     }

@@ -37,28 +37,26 @@ public class Utils {
 
 
     private static UtilsInteface utilsInteface111;
-    private static  ImageView imagview;
+    private static ImageView imagview;
 
 
-
-
-    private static Handler handler=new Handler(){
+    private static Handler handler = new Handler() {
 
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
 
-            switch (msg.what){
+            switch (msg.what) {
 
-                case 0:
-                {
-                    String  obj = (String) msg.obj;
+                case 0: {
+
+
+                    String obj = (String) msg.obj;
                     utilsInteface111.CallBackJson(obj);
                 }
                 break;
 
-                case 1:
-                {
+                case 1: {
                     byte[] obj = (byte[]) msg.obj;
 
                     Bitmap bitmap = BitmapFactory.decodeByteArray(obj, 0, obj.length);
@@ -68,17 +66,11 @@ public class Utils {
                 break;
 
 
-
             }
-
-
 
 
         }
     };
-
-
-
 
 
     public static <T> void HttpGet(String url, HashMap<String, String> hashMap, final Class<T> tClassa, final UtilsInteface utilsInteface) {
@@ -146,11 +138,9 @@ public class Utils {
     }
 
 
-
-
     public static void OkhttpImag(ImageView imag_right, String thumbnail_pic_s) {
 
-        imagview=imag_right;
+        imagview = imag_right;
 
 
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -169,8 +159,8 @@ public class Utils {
                 byte[] bytes = response.body().bytes();
 
                 Message message = handler.obtainMessage();
-                message.obj=bytes;
-                message.what=1;
+                message.obj = bytes;
+                message.what = 1;
 
                 handler.sendMessage(message);
             }
@@ -180,12 +170,10 @@ public class Utils {
     }
 
 
+    public static <T> void OkHttpget(String url, UtilsInteface utilsInteface2) {
 
 
-    public static <T>void OkHttpget(String url,UtilsInteface utilsInteface2){
-
-
-        utilsInteface111=utilsInteface2;
+        utilsInteface111 = utilsInteface2;
 
 
         OkHttpClient okHttpClient = new OkHttpClient();
@@ -203,28 +191,17 @@ public class Utils {
                 String string = response.body().string();
 
                 Message message = handler.obtainMessage();
-                message.obj=string;
-                message.what=0;
+                message.obj = string;
+                message.what = 0;
 
                 handler.sendMessage(message);
-
 
 
             }
         });
 
 
-
-
     }
-
-
-
-
-
-
-
-
 
 
     public static int getScrennWinth(Context mcontext) {
