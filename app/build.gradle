@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "com.zhori.today_headlines"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -45,5 +45,6 @@ dependencies {
     compile project(':sliding_menu_')
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.squareup.okhttp3:okhttp:3.8.0'
+    compile 'fm.jiecao:jiecaovideoplayer:5.5.4'
 }
 

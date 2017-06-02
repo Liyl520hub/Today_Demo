@@ -22,16 +22,26 @@
         android:name=".view.myapp.MyAppliction"
         >
 
-        <activity android:name=".view.activity.MainActivity">
+        <activity android:name=".view.activity.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+        <activity android:name=".view.activity.WelcomeActivity">
+
             <intent-filter>
 
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
+
+
         </activity>
         <activity android:name=".view.activity.NewsActivity"/>
         <activity android:name=".view.activity.Login_QQ"/>
+
 
 
 
@@ -53,7 +63,6 @@
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar"
             android:configChanges="orientation|keyboardHidden|screenSize"/>
-
 
     </application>
 

@@ -70,7 +70,7 @@ public class MyDecoration extends ItemDecoration {
         for (int i = 0; i <childCount; i++) {
             int bottom = parent.getChildAt(i).getBottom();
 
-            c.drawRect(0,bottom,scrennWinth,bottom+20,paint);
+            c.drawRect(0,bottom,scrennWinth,bottom+10,paint);
 
 
 

@@ -19,6 +19,8 @@ import com.zhori.today_headlines.view.iview.Iview;
 
 import java.util.ArrayList;
 
+import static com.zhori.today_headlines.R.drawable.day_night;
+
 public class MainActivity extends BaseActivity implements Iview, View.OnClickListener {
 
     private MainPresenter homePresenter;
